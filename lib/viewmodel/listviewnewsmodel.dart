@@ -15,7 +15,7 @@ class ListViewNewsModel with ChangeNotifier {
   // ignore: deprecated_member_use
   List<ViewNewsModel> articles = List<ViewNewsModel>();
 
-  void getTopNewsHeadline() async {
+  void fetchTopNewsHeadline() async {
     // ignore: deprecated_member_use
     List<ModelNewsArticle> _newsarticle = await WebService().getTopHeadlines();
     loadingStatus = LoadingStatus.Searching;

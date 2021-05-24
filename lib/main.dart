@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news/screen/mainscreen.dart';
+import 'package:news/viewmodel/listviewnewsmodel.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,10 +12,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Haberler"),
-        ),
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (_) => ListViewNewsModel(),
+          ),
+        ],
+        child: NewsScreen(),
       ),
     );
   }
