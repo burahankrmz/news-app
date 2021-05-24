@@ -1,9 +1,9 @@
 import 'package:news/model/modelnews.dart';
 import 'package:intl/intl.dart';
 
-class ViewModel {
+class ViewNewsModel {
   ModelNewsArticle _modelNewsArticle;
-  ViewModel({ModelNewsArticle article}) : _modelNewsArticle = article;
+  ViewNewsModel({ModelNewsArticle article}) : _modelNewsArticle = article;
 
   String get title {
     return _modelNewsArticle.title;
