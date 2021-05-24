@@ -43,22 +43,36 @@ class _NewsScreenState extends State<NewsScreen> {
           )
         ],
       ),
-      body: SafeArea(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: 30, bottom: 15, top: 15),
-            child: Text(
-              "Headlines",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Expanded(
-            child: NewsGrid(articles: listviewnewsmodel.articles),
-          ),
-        ],
-      )),
+      body: Dehele(listviewnewsmodel: listviewnewsmodel),
     );
+  }
+}
+
+class Dehele extends StatelessWidget {
+  const Dehele({
+    Key key,
+    @required this.listviewnewsmodel,
+  }) : super(key: key);
+
+  final ListViewNewsModel listviewnewsmodel;
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 30, bottom: 15, top: 15),
+          child: Text(
+            "Headlines",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Expanded(
+          child: NewsGrid(articles: listviewnewsmodel.articles),
+        ),
+      ],
+    ));
   }
 }
